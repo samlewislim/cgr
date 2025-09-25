@@ -87,7 +87,7 @@ python analysis/pareto_calibration.py \
   --out pareto_results/qwen3-8b_pareto.csv
 ```
 
-Repeat the command above with the appropriate `--inputs`, `--model-name` and `--out` for which ever model you want (gpt-oss-20b, qwen3-8b, qwen3-32b).
+Repeat the command above with the appropriate `--inputs`, `--model-name` and `--out` for whichever model you want (gpt-oss-20b, qwen3-8b, qwen3-32b).
 
 
 Notes:
