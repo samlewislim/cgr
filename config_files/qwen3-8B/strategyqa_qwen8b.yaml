@@ -1,0 +1,4 @@
+dataset_path: "datasets/strategyqa.parquet"
+model_name: "Qwen/Qwen3-8B"
+dataset_prefix: "Please answer the following question by selecting one of the answer choices Yes or No. Provide your answer as Yes or No.\n"
+batch_size: 32

@@ -1,0 +1,4 @@
+dataset_path: "datasets/gsm8k.parquet"
+model_name: "openai/gpt-oss-20b"
+dataset_prefix: "Please answer the following question. When you provide your final answer, format it as just the final numerical answer.\n"
+batch_size: 16

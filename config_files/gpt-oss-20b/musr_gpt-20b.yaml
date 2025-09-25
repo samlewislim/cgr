@@ -1,0 +1,4 @@
+dataset_path: "datasets/musr-all.parquet"
+model_name: "openai/gpt-oss-20b"
+dataset_prefix: "Please answer the following question by selecting one of the provided answer choices. Choices are prefixed by labels such as A, B, C, D, etc. Provide your answer as only the label of your chosen option (e.g., A, B, C, or D). Do not include the option text.\n"
+batch_size: 8

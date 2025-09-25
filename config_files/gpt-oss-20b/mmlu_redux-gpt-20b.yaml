@@ -1,0 +1,5 @@
+dataset_path: "datasets/mmlu_redux.parquet"
+model_name: "openai/gpt-oss-20b"
+dataset_prefix: "Please answer the following question by selecting one of the answer choices (A, B, C or D). Provide your answer as only the letter corresponding to your answer.\n"
+batch_size: 16
+resume: true

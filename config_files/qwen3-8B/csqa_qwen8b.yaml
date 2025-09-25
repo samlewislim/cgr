@@ -1,0 +1,5 @@
+dataset_path: "datasets/csqa.parquet"
+model_name: "Qwen/Qwen3-8B"
+dataset_prefix: "Please answer the following question by selecting one of the answer choices (A, B, C, D, or E). Provide your answer as only the letter corresponding to your answer.\n"
+batch_size: 32
+resume: false
