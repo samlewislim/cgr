@@ -18,7 +18,7 @@ The config must match the ExperimentalConfig dataclass. Minimal example:
 
 ```yaml
 dataset_path: "/absolute/path/to/dataset.parquet"   # file accepted by datasets.load_dataset("parquet")
-model_name: "your/model-name"                      # hugginface model name
+model_name: "your/model-name"                      # Hugging Face model name
 dataset_prefix: ""                                 # optional text prefixed to every question
 batch_size: 2
 resume: false                                      # true to resume from existing results
@@ -28,25 +28,6 @@ save_every: 200                                    # flush to disk after this ma
 Notes:
 - Use absolute paths in cluster job scripts for reproducibility.
 - The script loads the parquet via datasets.load_dataset("parquet", data_files=config.dataset_path).
-
-## Parquet dataset format (what you must provide)
-The script expects a parquet file that, when loaded, provides a "train" split (datasets will create a single split named "train" for a single parquet file). Each row should be a record with at least:
-
-- question (string) — the prompt/question text the model should answer
-- answer (string, optional) — ground-truth answer used to compute correctness (if present)
-- id (optional) — unique identifier for the question; if absent the row index is used
-
-Examples of valid rows (columns):
-- question: "What is 2+2?"
-- answer: "4"
-- id: "csqa_0001"
-
-If you cannot share the parquet, ensure your file uses a standard pyarrow/parquet writer and contains the above columns. The script reads dataset["train"] and iterates rows.
-
-## Output
-- Results are written to confidence_and_cot_results/<model_name>/<model_name>_<dataset_basename>_results.parquet
-- Each row includes: question_id, question, ground_truth (if present), p_true_confidence, verbalised_confidence, margin_confidence, predictive_entropy_confidence, perplexity_confidence, generated responses, timings, and CoT outputs (when produced).
-- Set `resume: true` to skip already-processed question IDs (the script detects existing question_id values in the output parquet).
 
 ## Parquet dataset format 
 The script expects a parquet file that, when loaded, provides a "train" split (datasets will create a single split named "train" for a single parquet file). Each row should be a record with at least:
