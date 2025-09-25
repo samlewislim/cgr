@@ -48,7 +48,7 @@ Examples of valid rows (columns):
 - Set `resume: true` to skip already-processed question IDs (the script detects existing question_id values in the output parquet).
 
 
-# Generating budget analysis
+# Running budget analysis
 
 Run the plotting script to reproduce the figures used in the paper. Example (one-line):
 
